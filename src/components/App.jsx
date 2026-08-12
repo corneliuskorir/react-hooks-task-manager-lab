@@ -7,10 +7,9 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:6001/tasks')
-    .then(r=>r.json())
-    .then(data=>setTasks(data))
-    
+    fetch("http://localhost:6001/tasks")
+      .then((r) => r.json())
+      .then((data) => setTasks(data));
   }, []);
 
   return (
