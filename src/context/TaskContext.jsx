@@ -24,8 +24,19 @@ export function TaskProvider({ children }) {
       .catch(console.log);
   };
 
+  const addTask = (newTask) => {
+    fetch("http://localhost:6001/tasks", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newTask),
+    })
+      .then((r) => r.json())
+      .then((data) => setTasks((prev) => [...prev, data]))
+      .catch(console.log);
+  };
+
   return (
-    <TaskContext.Provider value={{ tasks, setTasks, toggleComplete }}>
+    <TaskContext.Provider value={{ tasks, setTasks, toggleComplete, addTask }}>
       {children}
     </TaskContext.Provider>
   );

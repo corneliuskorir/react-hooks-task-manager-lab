@@ -24,6 +24,11 @@
       "id": "5",
       "title": "Read a book",
       "completed": true
+    },
+    {
+      "id": "48f8",
+      "title": "this is new",
+      "completed": false
     }
   ]
 }
